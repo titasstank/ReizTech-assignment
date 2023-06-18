@@ -12,6 +12,20 @@ code {
     monospace;
 }
 
+div {
+  border-radius: 20px;
+}
+
+.page-div {
+  margin-left: 25px;
+}
+
+.individual-data {
+  margin-top: 10px;
+  margin-right: 25px;
+  min-height: 70px;
+}
+
 .bg-llight-green {
   background-color: #e3ffe3;
   line-height: 5px;
@@ -23,27 +37,27 @@ code {
 
 button {
   border-radius: 10px;
-  padding: 12.5px 30px;
+  padding: 8px 20px;
   border: 0;
   background-color: #8fff8f;
   color: #000000;
   font-weight: Bold;
-  letter-spacing: 3px;
+  letter-spacing: 1.5px;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
  }
 
  button:hover {
   border-radius: 10px;
-  letter-spacing: 3px;
   background-color: #73db73;
-  /* color: hsl(0, 0%, 100%); */
-
  }
  
  button:active {
-  letter-spacing: 3px;
   color: hsl(0, 0%, 100%);
-  transform: translateY(10px);
   transition: 100ms;
+ }
+
+ .alpha-sort-image {
+  width: 35px;
+  height: 35px;
  }
