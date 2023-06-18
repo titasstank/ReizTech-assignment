@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useEffect } from 'react';
 import DataDisplay from './DataDisplay';
+import SortButton from './SortButton';
 
 function App() {
 
@@ -12,10 +13,10 @@ function App() {
   }, []);
 
   return (
-    <body>
-      <div class="bg-llight-green">
+    <body class ="bg-llight-green">
+      <div class='page-div'>
         <h1>Countries</h1>
-        <button> Hello guys</button>
+        <SortButton />
         <DataDisplay />
       </div>
     </body>
