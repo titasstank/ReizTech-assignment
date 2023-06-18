@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.bg-llight-green {
+  background-color: #e3ffe3;
+  line-height: 5px;
+}
+
+.bg-light-green {
+  background-color: #ccffcc;
+}
+
+button {
+  border-radius: 10px;
+  padding: 12.5px 30px;
+  border: 0;
+  background-color: #8fff8f;
+  color: #000000;
+  font-weight: Bold;
+  letter-spacing: 3px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+ }
+
+ button:hover {
+  border-radius: 10px;
+  letter-spacing: 3px;
+  background-color: #73db73;
+  /* color: hsl(0, 0%, 100%); */
+
+ }
+ 
+ button:active {
+  letter-spacing: 3px;
+  color: hsl(0, 0%, 100%);
+  transform: translateY(10px);
+  transition: 100ms;
+ }

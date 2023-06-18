@@ -4,12 +4,6 @@ import axios from 'axios';
 const DataDisplay = () => {
     const [data, setData] = useState([]);
 
-    // useEffect(() => {
-    //     fetch('https://restcountries.com/v2/all?fields=name,region,area')
-    //     .then(response => response.json())
-    //     .then(json => console.log(json))
-    //   }, []);
-  
     useEffect(() => {
       axios.get('https://restcountries.com/v2/all?fields=name,region,area')
         .then(response => {
@@ -23,8 +17,8 @@ const DataDisplay = () => {
     return (
       <div>
         {data.map(item => (
-          <div key={item.name}>
-            <h3>{item.name}</h3>
+          <div class="bg-light-green" key={item.name}>
+            <h4>{item.name}</h4>
             <p>Region: {item.region}</p>
             <p>Area: {item.area}</p>
           </div>
