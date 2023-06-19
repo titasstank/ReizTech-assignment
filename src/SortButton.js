@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './index.css';
 import DataDisplay from './DataDisplay';
 import alphaSortImage from './img/alphaSort.png'
