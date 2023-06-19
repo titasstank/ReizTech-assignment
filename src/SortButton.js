@@ -4,13 +4,15 @@ import DataDisplay from './DataDisplay';
 import alphaSortImage from './img/alphaSort.png'
 
 function SortButton() {
+    const [showSmallCountries, setShowSmallCountries] = useState(false);
+
     const alphaSort = () => {
         DataDisplay.toggleOrder();
-        console.log('Button pressed!');
     } 
 
-    const areaSizeSort = () => {
-        console.log("Sort by area clicked");
+    const toggleSmallCountries = () => {
+        DataDisplay.toggleSmallCountries();
+        setShowSmallCountries(!showSmallCountries);
     }
 
     return (
@@ -19,7 +21,9 @@ function SortButton() {
                 <img src={alphaSortImage} alt="Alphabetical Sort Image" class="alpha-sort-image"></img>
                 Sort
             </button>
-            <button onClick={areaSizeSort}>Area &lt; Lithuania</button>
+            <button onClick={toggleSmallCountries}>
+                {showSmallCountries ? 'Show All Countries' : 'Show Small Countries'}
+            </button>
         </div>
     );
 }

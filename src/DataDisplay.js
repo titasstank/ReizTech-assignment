@@ -4,6 +4,7 @@ import axios from 'axios';
 const DataDisplay = () => {
     const [data, setData] = useState([]);
     const [isReversed, setIsReversed] = useState(false);
+    const [showSmallCountries, setShowSmallCountries] = useState(false);
 
     useEffect(() => {
       axios.get('https://restcountries.com/v2/all?fields=name,region,area')
@@ -20,17 +21,45 @@ const DataDisplay = () => {
       setData(prevData => [...prevData].reverse());
     };
 
+
+    const toggleSmallCountries = () => {
+      setShowSmallCountries(!showSmallCountries);
+    };
+
+
+    const getLithuaniaArea = () => {
+      const lithuania = data.find(item => item.name === 'Lithuania');
+      return lithuania ? lithuania.area : 0;
+    };
+
+    const filteredData = showSmallCountries
+    ? data.filter(item => item.area < getLithuaniaArea())
+    : data;
+
+
+    /* Setting Static Const*/
     DataDisplay.toggleOrder = toggleOrder;
+    DataDisplay.toggleSmallCountries = toggleSmallCountries;
+
   
     return (
-      <div class="data">
-        {data.map(item => (
-          <div class="bg-light-green individual-data" key={item.name}>
-            <h4>{item.name}</h4>
-            <p>Region: {item.region}</p>
-            <p>Area: {item.area}</p>
-          </div>
-        ))}
+      // <div class="data">
+      //   {data.map(item => (
+      //     <div class="bg-light-green individual-data" key={item.name}>
+      //       <h4>{item.name}</h4>
+      //       <p>Region: {item.region}</p>
+      //       <p>Area: {item.area}</p>
+      //     </div>
+      //   ))}
+      // </div>
+      <div className="data">
+      {filteredData.map(item => (
+        <div className="bg-light-green individual-data" key={item.name}>
+          <h4>{item.name}</h4>
+          <p>Region: {item.region}</p>
+          <p>Area: {item.area}</p>
+        </div>
+      ))}
       </div>
     );
   };
