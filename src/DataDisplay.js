@@ -5,7 +5,7 @@ const DataDisplay = () => {
     const [data, setData] = useState([]);
     const [isReversed, setIsReversed] = useState(false);
     const [showSmallCountries, setShowSmallCountries] = useState(false);
-    const [showOceaniaCountries, setShowOceaniaCountries] = useState(false);
+    const [showOceaniaRegion, setShowOceaniaRegion] = useState(false);
 
     useEffect(() => {
       axios.get('https://restcountries.com/v2/all?fields=name,region,area')
@@ -27,8 +27,8 @@ const DataDisplay = () => {
       setShowSmallCountries(!showSmallCountries);
     };
 
-    const toggleOceaniaCountries = () => {
-      setShowOceaniaCountries(!showOceaniaCountries);
+    const toggleOceaniaRegion = () => {
+      setShowOceaniaRegion(!showOceaniaRegion);
     };
 
 
@@ -37,13 +37,9 @@ const DataDisplay = () => {
       return lithuania ? lithuania.area : 0;
     };
 
-    // const filteredData = showSmallCountries
-    // ? data.filter(item => item.area < getLithuaniaArea())
-    // : data;
-
     const filteredData = data.filter(item => {
       const isSmallCountry = showSmallCountries ? item.area < getLithuaniaArea() : true;
-      const isOceaniaCountry = showOceaniaCountries ? item.region === 'Oceania' : true;
+      const isOceaniaCountry = showOceaniaRegion ? item.region === 'Oceania' : true;
       return isSmallCountry && isOceaniaCountry;
     });
 
@@ -51,7 +47,7 @@ const DataDisplay = () => {
     /* Setting Static Const*/
     DataDisplay.toggleOrder = toggleOrder;
     DataDisplay.toggleSmallCountries = toggleSmallCountries;
-    DataDisplay.toggleOceaniaCountries = toggleOceaniaCountries;
+    DataDisplay.toggleOceaniaRegion = toggleOceaniaRegion;
 
   
     return (
