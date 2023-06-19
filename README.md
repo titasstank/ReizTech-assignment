@@ -1,3 +1,12 @@
+# About the website
+
+This website displays Countries, their region and area.
+There are three filters available for the data:
+ - Sort alphabetically
+ - Show countries with an area smaller than Lithuania
+ - Show countries from Oceania region
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
