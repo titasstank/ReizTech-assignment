@@ -1,3 +1,9 @@
+:root {
+  --button-background: #8fff8f;
+  --button-color: #000000;
+  --button-height: 50px;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -26,6 +32,10 @@ div {
   min-height: 70px;
 }
 
+
+
+
+
 .bg-llight-green {
   background-color: #e3ffe3;
   line-height: 5px;
@@ -35,12 +45,22 @@ div {
   background-color: #ccffcc;
 }
 
+
+
+
+
+.buttons {
+  display: flex;
+  width: fit-content;
+}
+
 button {
-  border-radius: 10px;
+  border-radius: 50px;
   padding: 8px 20px;
+  height: var(--button-height);
   border: 0;
-  background-color: #8fff8f;
-  color: #000000;
+  background-color: var(--button-background);
+  color: var(--button-color);
   font-weight: Bold;
   letter-spacing: 1.5px;
   transition: all 0.5s;
@@ -48,14 +68,17 @@ button {
  }
 
  button:hover {
-  border-radius: 10px;
-  background-color: #73db73;
+  filter: brightness(75%);
  }
  
  button:active {
   color: hsl(0, 0%, 100%);
   transition: 100ms;
  }
+
+
+
+
 
  .alpha-sort-image {
   width: 35px;

@@ -9,11 +9,18 @@ function SortButton() {
         console.log('Button pressed!');
     } 
 
+    const areaSizeSort = () => {
+        console.log("Sort by area clicked");
+    }
+
     return (
-        <button onClick={alphaSort}>
-            <img src={alphaSortImage} alt="Alphabetical Sort Image" class="alpha-sort-image"></img>
-            Sort
+        <div class='buttons'>
+            <button onClick={alphaSort}>
+                <img src={alphaSortImage} alt="Alphabetical Sort Image" class="alpha-sort-image"></img>
+                Sort
             </button>
+            <button onClick={areaSizeSort}>Area &lt; Lithuania</button>
+        </div>
     );
 }
 
