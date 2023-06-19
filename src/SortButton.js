@@ -5,6 +5,7 @@ import alphaSortImage from './img/alphaSort.png'
 
 function SortButton() {
     const [showSmallCountries, setShowSmallCountries] = useState(false);
+    const [showOceaniaCountries, setShowOceaniaCountries] = useState(false);
 
     const alphaSort = () => {
         DataDisplay.toggleOrder();
@@ -15,6 +16,11 @@ function SortButton() {
         setShowSmallCountries(!showSmallCountries);
     }
 
+    const toggleOceaniaCountries = () => {
+        DataDisplay.toggleOceaniaCountries();
+        setShowOceaniaCountries(!showOceaniaCountries);
+      };
+
     return (
         <div class='buttons'>
             <button onClick={alphaSort}>
@@ -23,6 +29,9 @@ function SortButton() {
             </button>
             <button onClick={toggleSmallCountries}>
                 {showSmallCountries ? 'Show All Countries' : 'Show Small Countries'}
+            </button>
+            <button onClick={toggleOceaniaCountries}>
+                {showSmallCountries ? 'Show All Regions' : 'Show Oceania Region'}
             </button>
         </div>
     );
